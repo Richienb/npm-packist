@@ -1,13 +1,19 @@
+const path = require("path")
 const test = require("ava")
-const theModule = require(".")
+const tar = require("tar")
+const npmPackist = require(".")
 
-test("main", (t) => {
-	t.throws(() => {
-		theModule(123)
-	}, {
-		instanceOf: TypeError,
-		message: "Expected a string, got number",
+test("main", async (t) => {
+	const cwd = path.resolve("./fixtures")
+	const packed = path.resolve("./packed.tgz")
+
+	t.is(await npmPackist(cwd, { fileName: packed }), packed)
+
+	const dirs = []
+	await tar.list({
+		file: packed,
+		onentry: ({ path: dir }) => dirs.push(dir),
 	})
 
-	t.is(theModule("unicorns"), "unicorns & rainbows")
+	t.deepEqual(dirs, ["index.js", "package.json"])
 })

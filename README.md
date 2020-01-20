@@ -1,41 +1,43 @@
-# The module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# NPM Packist [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/npm-packist/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/npm-packist)
 
-My awesome module.
+Pack npm modules.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/npm-packist.png)](https://npmjs.com/package/npm-packist)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install npm-packist
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const npmPackist = require("npm-packist");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+(async () => {
+	await npmPackist(".")
+	//=> 'C:\\Users\\richi\\Documents\\GitHub\\npm-packist\\the-module-v0.0.0.tgz'
+})()
 ```
 
 ## API
 
-### theModule(input, options?)
+### npmPackist(cwd?, options?)
 
-#### input
+#### cwd
 
 Type: `string`
 
-Lorem ipsum.
+The directory to pack the modules from.
 
 #### options
 
 Type: `object`
 
-##### postfix
+##### fileName
 
 Type: `string`\
-Default: `rainbows`
+Default: (Generated from package name and version)
 
-Lorem ipsum.
+The filename to save the tgz file as.

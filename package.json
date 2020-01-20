@@ -1,8 +1,8 @@
 {
-	"name": "the-module",
+	"name": "npm-packist",
 	"version": "0.0.0",
-	"description": "My awesome module.",
-	"repository": "https://github.com/Richienb/the-module.git",
+	"description": "Pack npm modules.",
+	"repository": "https://github.com/Richienb/npm-packist.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
 	"main": "index.js",
@@ -11,14 +11,28 @@
 		"index.d.ts"
 	],
 	"engines": {
-		"node": ">=10"
+		"node": ">=8.3"
 	},
 	"scripts": {
 		"lint": "xo",
 		"test": "yarn lint && ava"
 	},
-	"keywords": [],
-	"dependencies": {},
+	"keywords": [
+		"npm",
+		"pack",
+		"tar",
+		"cwd",
+		"archive",
+		"publish",
+		"registry",
+		"implementation"
+	],
+	"dependencies": {
+		"npm-packlist": "^2.0.3",
+		"ow": "^0.15.0",
+		"read-pkg": "^5.2.0",
+		"tar": "^5.0.5"
+	},
 	"devDependencies": {
 		"ava": "^3.0.0",
 		"eslint-config-richienb": "^0.3.0",
