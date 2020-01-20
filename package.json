@@ -1,6 +1,6 @@
 {
 	"name": "npm-packist",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Pack npm modules.",
 	"repository": "https://github.com/Richienb/npm-packist.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
